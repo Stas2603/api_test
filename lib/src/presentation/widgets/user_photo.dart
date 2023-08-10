@@ -1,7 +1,8 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
-class MyCircleAvatar extends StatelessWidget {
-  const MyCircleAvatar({
+class UserPhoto extends StatelessWidget {
+  const UserPhoto({
     super.key,
     required this.padding,
     required this.radius,
@@ -16,9 +17,10 @@ class MyCircleAvatar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.all(padding),
-      child: CircleAvatar(
-        radius: radius,
-        backgroundImage: NetworkImage(avatar),
+      child: CachedNetworkImage(
+        imageUrl: avatar,
+        placeholder: (context, url) => const CircularProgressIndicator(),
+        errorWidget: (context, url, error) => const Icon(Icons.error),
       ),
     );
   }

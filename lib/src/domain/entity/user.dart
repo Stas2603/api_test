@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:equatable/equatable.dart';
 
 User mockedUser = const User(
@@ -25,4 +27,27 @@ class User extends Equatable {
 
   @override
   List<Object?> get props => [id, email, firstName, lastName, photo];
+
+  Map<String, dynamic> toMap() {
+    return <String, dynamic>{
+      'id': id,
+      'email': email,
+      'firstName': firstName,
+      'lastName': lastName,
+      'photo': photo,
+    };
+  }
+
+  factory User.fromMap(Map<String, dynamic> map) => User(
+        id: map['id'] as int,
+        email: map['email'] as String,
+        firstName: map['firstName'] as String,
+        lastName: map['lastName'] as String,
+        photo: map['photo'] as String,
+      );
+
+  String toJson() => json.encode(toMap());
+
+  factory User.fromJson(String source) =>
+      User.fromMap(json.decode(source) as Map<String, dynamic>);
 }

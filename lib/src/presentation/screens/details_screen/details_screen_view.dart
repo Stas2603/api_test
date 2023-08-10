@@ -41,7 +41,7 @@ class DetailsScreenView extends GetView<DetailsScreenController> {
 
       return Column(
         children: [
-          MyCircleAvatar(padding: _padding, radius: _radius, avatar: photo),
+          UserPhoto(padding: _padding, radius: _radius, avatar: photo),
           _buildTable(context, id, email, firstName, lastName),
         ],
       );

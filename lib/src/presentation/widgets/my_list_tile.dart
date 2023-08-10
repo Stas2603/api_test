@@ -38,7 +38,7 @@ class MyListTile extends StatelessWidget {
             ],
           ),
           child: ListTile(
-            trailing: MyCircleAvatar(
+            trailing: UserPhoto(
               padding: _myCircleAvatarPadding,
               radius: _myCircleAvatarRadius,
               avatar: user.photo,
