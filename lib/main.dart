@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'src/api_test.dart';
 import 'src/di/injector.dart';
 
-void main() {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  initInjector();
+  await init();
 
   runApp(const ApiTest());
 }
