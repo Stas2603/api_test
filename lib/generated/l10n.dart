@@ -69,6 +69,56 @@ class S {
       args: [],
     );
   }
+
+  /// `Details screen`
+  String get detailsScreen {
+    return Intl.message(
+      'Details screen',
+      name: 'detailsScreen',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `First Name:`
+  String get firstName {
+    return Intl.message(
+      'First Name:',
+      name: 'firstName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Id:`
+  String get id {
+    return Intl.message(
+      'Id:',
+      name: 'id',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Email:`
+  String get email {
+    return Intl.message(
+      'Email:',
+      name: 'email',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Last Name:`
+  String get lastName {
+    return Intl.message(
+      'Last Name:',
+      name: 'lastName',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

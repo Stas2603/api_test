@@ -3,13 +3,19 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:get/get.dart';
 
 import '../generated/l10n.dart';
-import 'presentation/navigation/go_router.dart';
+import 'presentation/screens/details_screen/details_screen_view.dart';
+import 'presentation/screens/main_screen/main_screen_view.dart';
 
 class ApiTest extends StatelessWidget {
   const ApiTest({super.key});
 
   @override
-  Widget build(BuildContext context) => GetMaterialApp.router(
+  Widget build(BuildContext context) => GetMaterialApp(
+        initialRoute: '/',
+        getPages: [
+          GetPage(name: '/', page: () => const MainScreenView()),
+          GetPage(name: '/details', page: () => const DetailsScreenView()),
+        ],
         localizationsDelegates: [
           S.delegate,
           GlobalMaterialLocalizations.delegate,
@@ -17,8 +23,5 @@ class ApiTest extends StatelessWidget {
           GlobalCupertinoLocalizations.delegate,
         ],
         supportedLocales: S.delegate.supportedLocales,
-        routerDelegate: router.routerDelegate,
-        routeInformationParser: router.routeInformationParser,
-        routeInformationProvider: router.routeInformationProvider,
       );
 }
