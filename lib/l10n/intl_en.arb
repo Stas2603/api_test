@@ -1,4 +1,9 @@
 {
   "mainScreen": "Main Screen",
-  "noUser": "No User"
+  "noUser": "No User",
+  "detailsScreen": "Details screen",
+  "firstName": "First Name:",
+  "id": "Id:",
+  "email": "Email:",
+  "lastName": "Last Name:"
 }

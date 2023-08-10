@@ -29,4 +29,12 @@ class UserRepositoryImpl extends UserRepository {
 
     return users;
   }
+
+  @override
+  Future<User> takeUserById(int id) async {
+    final networkData = await usersApi.takeUserById(id);
+    final user = userMapper.mapFromNetwork(networkData.networkUser);
+
+    return user;
+  }
 }
